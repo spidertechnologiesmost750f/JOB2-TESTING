@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Received | Randstad New Zealand</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="success">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">R</span>
+        <span class="logo-text"><strong>Randstad New Zealand</strong><span>Job &amp; Recruitment Agency</span></span>
+      </a>
+      <nav class="nav-main">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Apply</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="progress-bar" aria-label="Application progress">
+      <span class="progress-step done">Home</span>
+      <span class="progress-step done">Job type</span>
+      <span class="progress-step done">Details</span>
+      <span class="progress-step done">Documents</span>
+      <span class="progress-step done">Review</span>
+      <span class="progress-step active">Done</span>
+    </nav>
+
+    <section class="success-box success-box--celebrate">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <h1>Your application has been received</h1>
+      <p id="success-received" class="success-received" hidden>
+        Thank you — we have recorded your application on our system.
+      </p>
+      <p id="success-message" class="success-lead">
+        Please reconfirm your application and send it through your email app to complete submission.
+      </p>
+      <p id="success-applicant-name" class="success-name" hidden></p>
+      <p id="success-email-sent" class="form-hint" hidden></p>
+      <ol id="success-steps" class="success-steps">
+        <li><strong>Reconfirm</strong> — check that all your details in the email are correct.</li>
+        <li><strong>Attach</strong> your documents (CV, passport, etc.) using the paperclip in your email app.</li>
+        <li><strong>Send</strong> the application email to <strong>workschengenhr@gmail.com</strong> (your reference number is already in the email).</li>
+      </ol>
+      <div class="success-ref-box" role="status" aria-live="polite">
+        <p class="success-ref-label">Your application reference number</p>
+        <p class="success-ref"><strong id="application-id">—</strong></p>
+        <p id="success-ref-advice" class="success-ref-advice">
+          Please <strong>keep this reference number</strong> or <strong>take a screenshot</strong> of this page
+          for future use. The same reference is included in the email you send to our team.
+        </p>
+      </div>
+      <p id="success-work-email" class="form-hint" hidden></p>
+      <p class="form-hint success-note">
+        Your application is only complete after you press <strong>Send</strong> in your email app.
+        If your email did not open, use the button below.
+      </p>
+      <div class="btn-group" style="justify-content:center;">
+        <a id="btn-open-email" href="mailto:workschengenhr@gmail.com" class="btn btn-primary" hidden>Send application through email</a>
+        <a href="index.html" class="btn btn-outline">Return to home</a>
+        <a href="categories.html" class="btn btn-ghost">New application</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-bottom">&copy; 2026 Randstad New Zealand.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

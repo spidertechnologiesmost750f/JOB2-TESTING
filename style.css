@@ -1,0 +1,1071 @@
+/* ==========================================================================
+   Randstad New Zealand — International Job Application Portal
+   Layout: CSS Grid + Flexbox | Mobile-first responsive design
+   ========================================================================== */
+
+:root {
+  --color-primary: #0d3b66;
+  --color-primary-light: #1a5f8a;
+  --color-accent: #e85d04;
+  --color-accent-hover: #d45103;
+  --color-bg: #f4f7fb;
+  --color-surface: #ffffff;
+  --color-text: #1a1a2e;
+  --color-muted: #5c6370;
+  --color-border: #dde3ec;
+  --color-success: #2d6a4f;
+  --color-error: #c1121f;
+  --color-warning: #e9c46a;
+  --shadow-sm: 0 1px 3px rgba(13, 59, 102, 0.08);
+  --shadow-md: 0 8px 24px rgba(13, 59, 102, 0.12);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 1100px;
+  --header-height: 72px;
+  /* Online images — flights & New Zealand (Unsplash) */
+  --bg-flight-wing: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80');
+  --bg-flight-sky: url('https://images.unsplash.com/photo-1464037866557-681ffc68f926?auto=format&fit=crop&w=1920&q=80');
+  --bg-nz-landscape: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1920&q=80');
+  --bg-nz-aerial: url('https://images.unsplash.com/photo-1589656964095-1f85c288e604?auto=format&fit=crop&w=1920&q=80');
+  --overlay-dark: linear-gradient(
+    160deg,
+    rgba(13, 59, 102, 0.9) 0%,
+    rgba(13, 59, 102, 0.75) 45%,
+    rgba(26, 95, 138, 0.85) 100%
+  );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  background-image: var(--overlay-dark), var(--bg-nz-landscape);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- Site header ----- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  height: var(--header-height);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-text strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-main a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-main a:hover,
+.nav-main a.active {
+  background: rgba(13, 59, 102, 0.08);
+  color: var(--color-primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+/* ----- Main content ----- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* ----- Hero (home) — flight to New Zealand background ----- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 420px;
+  background-image: var(--overlay-dark), var(--bg-flight-wing);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem 2.25rem;
+  margin: 1.5rem;
+  margin-right: 0.75rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.hero-visual {
+  background-image: linear-gradient(
+      145deg,
+      rgba(13, 59, 102, 0.88) 0%,
+      rgba(26, 95, 138, 0.78) 100%
+    ),
+    var(--bg-nz-aerial);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin: 1.5rem;
+  margin-left: 0.75rem;
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-visual ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.hero-visual li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.hero-visual li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary-light);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: rgba(13, 59, 102, 0.06);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ----- Cards & sections ----- */
+/* Section headings on top of page background image */
+main > .section-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+main > .section-subtitle {
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.card h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card-selectable {
+  cursor: pointer;
+  text-align: center;
+}
+
+.card-selectable.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ----- Progress steps ----- */
+.progress-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-step {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  padding: 0.5rem;
+  position: relative;
+}
+
+.progress-step.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.progress-step.done {
+  color: var(--color-success);
+}
+
+.progress-step::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  margin-top: 0.35rem;
+}
+
+.progress-step.active::after,
+.progress-step.done::after {
+  background: var(--color-accent);
+}
+
+/* ----- Forms ----- */
+.form-panel {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-group label .required {
+  color: var(--color-error);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.12);
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: var(--color-error);
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: var(--color-error);
+  min-height: 1.1em;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* Radio / checkbox groups */
+.option-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.option-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.option-chip:has(input:checked) {
+  border-color: var(--color-primary);
+  background: rgba(13, 59, 102, 0.06);
+}
+
+.option-chip input {
+  accent-color: var(--color-primary);
+}
+
+/* Document checklist */
+.checklist {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.checklist label {
+  flex: 1;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.attached-files-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.attached-files-list li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.alert-info {
+  background: #e8f4fc;
+  border-left: 4px solid var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.alert-warning {
+  background: #fef9e7;
+  border-left: 4px solid var(--color-warning);
+  color: #7d5a00;
+}
+
+.alert-success {
+  background: #e8f5e9;
+  border-left: 4px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.alert-error {
+  background: #fde8e8;
+  border-left: 4px solid var(--color-error);
+  color: var(--color-error);
+}
+
+/* Review table */
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.review-table th,
+.review-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.review-table th {
+  width: 35%;
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.review-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-primary);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.review-section:first-child .review-section-title {
+  margin-top: 0;
+}
+
+.review-section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.4rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.review-table th[scope='row'] {
+  width: 38%;
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.review-table td {
+  word-break: break-word;
+}
+
+.review-checklist {
+  margin: 0.5rem 0 0;
+  padding: 0.75rem 1rem;
+  background: rgba(13, 59, 102, 0.04);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.review-checklist li {
+  border-bottom: none;
+  padding: 0.35rem 0;
+}
+
+.review-intro {
+  margin: -1rem 0 1.5rem;
+  max-width: 52ch;
+}
+
+/* NZ jobs listing — flight / New Zealand background */
+.jobs-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background-image: var(--overlay-dark), var(--bg-flight-sky);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+}
+
+.jobs-section > .section-title,
+.jobs-section > .section-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.jobs-panel {
+  background: rgba(13, 59, 102, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.jobs-panel-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.jobs-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.65rem;
+}
+
+.jobs-grid li {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+.jobs-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+}
+
+.benefits-list li {
+  padding: 0.35rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+.card-job-preview {
+  list-style: none;
+  margin-top: 0.75rem;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.card-job-preview li {
+  padding: 0.2rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.card-job-preview li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary);
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  font-size: 1.25rem;
+  color: var(--color-accent);
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  padding: 0 1.25rem 1rem;
+  color: var(--color-muted);
+}
+
+/* Success page */
+.success-box {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  max-width: 560px;
+  margin: 2rem auto;
+}
+
+.success-box--celebrate {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-md);
+  animation: successPop 0.45s ease-out;
+}
+
+@keyframes successPop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.success-box--celebrate h1 {
+  color: var(--color-success);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.success-lead {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.success-name {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.success-ref-box {
+  background: rgba(13, 59, 102, 0.06);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem auto 1rem;
+  max-width: 420px;
+}
+
+.success-ref-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.success-ref {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
+
+.success-ref-advice {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.success-note {
+  margin-top: 1rem;
+}
+
+.success-steps {
+  text-align: left;
+  max-width: 420px;
+  margin: 1rem auto 1.25rem;
+  padding-left: 1.25rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.success-steps li {
+  margin-bottom: 0.5rem;
+}
+
+.success-received {
+  font-size: 1rem;
+  color: var(--color-success);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-success);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-primary);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 1.25rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.site-footer h4 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.site-footer p,
+.site-footer li {
+  font-size: 0.875rem;
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 1.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loading-overlay.visible {
+  display: flex;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-content,
+  .hero-visual {
+    margin: 1rem;
+  }
+
+  .hero-content {
+    margin-bottom: 0.5rem;
+  }
+
+  .jobs-section {
+    padding: 1.25rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-main {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-main.open {
+    display: flex;
+  }
+
+  .header-inner {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .form-panel {
+    padding: 1.25rem;
+  }
+}

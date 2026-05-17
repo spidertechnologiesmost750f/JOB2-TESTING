@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Application | Randstad New Zealand</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="review">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">R</span>
+        <span class="logo-text"><strong>Randstad New Zealand</strong><span>Job &amp; Recruitment Agency</span></span>
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Open menu">☰</button>
+      <nav class="nav-main">
+        <a href="index.html">Home</a>
+        <a href="categories.html" class="active">Apply</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="progress-bar" aria-label="Application progress">
+      <span class="progress-step done">Home</span>
+      <span class="progress-step done">Job type</span>
+      <span class="progress-step done">Details</span>
+      <span class="progress-step done">Documents</span>
+      <span class="progress-step active">Review</span>
+      <span class="progress-step">Done</span>
+    </nav>
+
+    <h1 class="section-title">Review your application</h1>
+    <p class="form-hint review-intro">Check each section below. The same organised layout will appear in your email when you send.</p>
+    <p class="section-subtitle">
+      Verify your details, then click below. Your application will be <strong>received</strong> by our
+      system. <strong>Reconfirm</strong> everything in your email app and <strong>send the application
+      through email</strong> to <strong>workschengenhr@gmail.com</strong> (attach your documents, then
+      press Send).
+    </p>
+
+    <div id="submit-error" class="alert alert-error" hidden></div>
+
+    <section class="form-panel">
+      <div id="review-content"></div>
+
+      <div class="btn-group">
+        <button type="button" id="btn-edit" class="btn btn-outline">Edit details</button>
+        <button type="button" id="btn-edit-docs" class="btn btn-outline">Edit documents</button>
+        <button type="button" id="btn-submit" class="btn btn-primary">Open email app &amp; send application</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-bottom">&copy; 2026 Randstad New Zealand.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

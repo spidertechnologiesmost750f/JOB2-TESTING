@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Job Type | Randstad New Zealand</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="category">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">R</span>
+        <span class="logo-text">
+          <strong>Randstad New Zealand</strong>
+          <span>Job &amp; Recruitment Agency</span>
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Open menu">☰</button>
+      <nav class="nav-main">
+        <a href="index.html">Home</a>
+        <a href="categories.html" class="active">Apply</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="progress-bar" aria-label="Application progress">
+      <span class="progress-step done">Home</span>
+      <span class="progress-step active">Job type</span>
+      <span class="progress-step">Details</span>
+      <span class="progress-step">Documents</span>
+      <span class="progress-step">Review</span>
+      <span class="progress-step">Done</span>
+    </nav>
+
+    <h1 class="section-title">Select your job type</h1>
+    <p class="section-subtitle">Choose the pathway that best describes the roles you are seeking.</p>
+
+    <div class="card-grid">
+      <article class="card card-selectable" data-job-type="Skilled" tabindex="0" role="button" aria-pressed="false">
+        <div class="card-icon" aria-hidden="true">🎓</div>
+        <h3>Skilled jobs</h3>
+        <p>Professional, technical, or specialist roles requiring qualifications or proven expertise.</p>
+      </article>
+      <article class="card card-selectable" data-job-type="Non-Skilled" tabindex="0" role="button" aria-pressed="false">
+        <div class="card-icon" aria-hidden="true">🇳🇿</div>
+        <h3>Non-skilled jobs — New Zealand</h3>
+        <p>Entry-level roles: farm work, hospitality, warehouse, cleaning, construction, factory, care, security, driving, and more. 1–2 year renewable contracts.</p>
+        <ul class="card-job-preview">
+          <li>Farm &amp; fruit picking</li>
+          <li>Warehouse &amp; factory</li>
+          <li>Hospitality &amp; kitchen</li>
+          <li>Construction &amp; landscaping</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="btn-group">
+      <a href="index.html" class="btn btn-ghost">Back to home</a>
+      <button type="button" id="btn-continue-category" class="btn btn-primary" disabled>Continue to application</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-bottom">&copy; 2026 Randstad New Zealand | Job &amp; Recruitment Agency.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
